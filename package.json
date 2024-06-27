@@ -18,6 +18,7 @@
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "npm run build && wrangler pages deploy",
+    "deploy:pages": "wrangler pages deploy",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -30,8 +31,8 @@
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.5.7",
-    "@builder.io/qwik-city": "^1.5.7",
+    "@builder.io/qwik": "https://pkg.pr.new/@builder.io/qwik@0fc3c74bb600e3ae4cb2706a3b9fe2565a372258",
+    "@builder.io/qwik-city": "https://pkg.pr.new/@builder.io/qwik-city@0fc3c74bb600e3ae4cb2706a3b9fe2565a372258",
     "@cloudflare/workers-types": "^4.20240620.0",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.12.7",

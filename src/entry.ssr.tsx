@@ -13,17 +13,23 @@
 import {
   renderToStream,
   type RenderToStreamOptions,
-} from "@builder.io/qwik/server";
-import { manifest } from "@qwik-client-manifest";
-import Root from "./root";
+} from '@builder.io/qwik/server';
+import { manifest } from '@qwik-client-manifest';
+import Root from './root';
 
 export default function (opts: RenderToStreamOptions) {
   return renderToStream(<Root />, {
     manifest,
     ...opts,
     // Use container attributes to set attributes on the html tag.
+    base: '/fragments/foo/build',
+    containerTagName: 'workers-kv-qwik',
+    qwikLoader: {
+      include: 'always',
+      position: 'bottom',
+    },
     containerAttributes: {
-      lang: "en-us",
+      lang: 'en-us',
       ...opts.containerAttributes,
     },
     serverData: {

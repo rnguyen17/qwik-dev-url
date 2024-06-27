@@ -28,6 +28,9 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
  */
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
+    build: {
+      assetsDir: 'fragments/foo'
+    },
     plugins: [qwikCity({
       platform
     }), qwikVite(), tsconfigPaths()],
